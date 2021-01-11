@@ -1,0 +1,15 @@
+﻿@model MovieViewModel
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+<div class="text-center">
+    <h1 class="display-4">@Model.Title</h1>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Average rating</label>
+        <div class="col-sm-10">
+            <span>@Model.AverageRating</span>
+        </div>
+    </div>
+    @*Another properties, images, actors etc.*@
+</div>

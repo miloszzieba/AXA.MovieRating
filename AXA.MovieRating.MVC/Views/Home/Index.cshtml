@@ -1,0 +1,33 @@
+﻿@model HomeViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Lista filmów</h1>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th>
+                    Nazwa
+                </th>
+                <th>
+                    Średnia ocena
+                </th>
+            </tr>
+        </thead>
+        <tbody id="childtable">
+            @foreach (var movie in Model.Movies)
+            {
+            <tr onclick="location.href='@Url.Action(movie.Id.ToString(), "Movie")'">
+                <td>
+                    @Html.DisplayFor(x => movie.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(x => movie.AverageRating)
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
